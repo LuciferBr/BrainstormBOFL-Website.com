@@ -10,15 +10,16 @@ body {
     color: #fff;
     line-height: 1.6;
     overflow-x: hidden;
+    font-size: 16px; /* Base font size for scaling */
 }
 
 /* Header */
 .holo-header {
     position: sticky;
     top: 0;
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
-    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
     text-align: center;
     z-index: 10;
 }
@@ -26,30 +27,34 @@ body {
 h1 {
     color: #00ffff;
     text-shadow: 0 0 15px #00ffff;
-    font-size: 2.5em;
+    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Scales with viewport */
     animation: glow 2s infinite alternate;
 }
 
 .subtitle {
     color: #ff00ff;
-    font-size: 1.1em;
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
     text-shadow: 0 0 10px #ff00ff;
-    margin: 10px 0;
+    margin: 0.5rem 0;
 }
 
-nav {
-    margin-top: 15px;
+.nav-container {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
 }
 
 .nav-btn {
     background: none;
     border: 2px solid #00ffff;
     color: #00ffff;
-    padding: 10px 20px;
-    margin: 0 10px;
+    padding: 0.6rem 1.2rem;
     border-radius: 5px;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 .nav-btn:hover, .nav-btn:focus, .nav-btn.active {
@@ -60,46 +65,47 @@ nav {
 
 /* Main Container */
 .holo-container {
-    max-width: 1000px;
-    margin: 0 auto 50px;
-    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: clamp(1.5rem, 4vw, 2.5rem);
 }
 
 .section-title {
     color: #00ff00;
     text-shadow: 0 0 10px #00ff00;
-    font-size: 2em;
+    font-size: clamp(1.5rem, 4vw, 2rem);
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 2rem;
 }
 
 /* Home Page */
 .hero {
     text-align: center;
-    padding: 60px 0;
+    padding: clamp(2rem, 10vw, 4rem) 0;
 }
 
 .hero h2 {
     color: #ff00ff;
     text-shadow: 0 0 10px #ff00ff;
-    font-size: 2.5em;
-    margin-bottom: 20px;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+    margin-bottom: 1rem;
 }
 
 .hero p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 1.5rem;
 }
 
 .cta-btn {
     display: inline-block;
-    padding: 15px 30px;
+    padding: 0.8rem 2rem;
     background: none;
     border: 2px solid #00ff00;
     color: #00ff00;
     border-radius: 5px;
     text-decoration: none;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    font-size: clamp(1rem, 3vw, 1.2rem);
 }
 
 .cta-btn:hover, .cta-btn:focus {
@@ -110,29 +116,32 @@ nav {
 
 /* About Page */
 .about-section p {
-    font-size: 1.1em;
+    font-size: clamp(1rem, 3vw, 1.1rem);
     text-align: center;
-    margin: 20px 0;
+    margin: 1rem auto;
+    max-width: 800px;
 }
 
 /* Inspire Page */
 .inspire-tool {
     display: flex;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 input {
-    width: 50%;
-    padding: 12px;
+    width: 100%;
+    max-width: 500px;
+    padding: 0.8rem;
     background: rgba(255, 255, 255, 0.1);
     border: 1px solid #00ffff;
     border-radius: 5px;
     color: #fff;
-    font-size: 1em;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
     outline: none;
-    transition: box-shadow 0.3s;
+    transition: box-shadow 0.3s ease;
 }
 
 input:focus {
@@ -140,13 +149,14 @@ input:focus {
 }
 
 .neon-btn {
-    padding: 12px 25px;
+    padding: 0.8rem 1.5rem;
     background: none;
     border: 2px solid #ff00ff;
     color: #ff00ff;
     border-radius: 5px;
     cursor: pointer;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 .neon-btn:hover, .neon-btn:focus {
@@ -169,17 +179,20 @@ input:focus {
 .holo-list {
     list-style: none;
     padding: 0;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .holo-list li {
-    padding: 15px;
+    padding: 1rem;
     background: rgba(0, 255, 255, 0.1);
-    margin: 10px 0;
+    margin: 0.5rem 0;
     border-radius: 5px;
     display: flex;
     justify-content: space-between;
     animation: slideIn 0.5s ease;
     border: 1px solid rgba(0, 255, 255, 0.3);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 .holo-list li span {
@@ -188,42 +201,47 @@ input:focus {
     text-shadow: 0 0 5px #ff4d4d;
 }
 
-/* Plans Page (Reused) */
+/* Plans Page */
 .card-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
 .card {
     background: rgba(0, 255, 255, 0.1);
-    padding: 25px;
+    padding: 1.5rem;
     border-radius: 10px;
     border: 1px solid rgba(0, 255, 255, 0.4);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
 }
 
 .card:hover, .card:focus {
-    transform: scale(1.05);
+    transform: scale(1.03);
     box-shadow: 0 0 20px #00ffff;
 }
 
 .card h3 {
     color: #ff00ff;
     text-shadow: 0 0 5px #ff00ff;
-    margin-bottom: 15px;
+    margin-bottom: 1rem;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+}
+
+.card p {
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 .timeline {
     position: relative;
-    padding-left: 50px;
+    padding-left: 3rem;
 }
 
 .timeline::before {
     content: '';
     position: absolute;
-    left: 20px;
+    left: 1rem;
     top: 0;
     bottom: 0;
     width: 3px;
@@ -233,8 +251,8 @@ input:focus {
 
 .timeline-item {
     background: rgba(0, 255, 255, 0.15);
-    padding: 20px;
-    margin: 30px 0;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
     border-radius: 10px;
     border: 1px solid rgba(0, 255, 255, 0.4);
     position: relative;
@@ -246,28 +264,34 @@ input:focus {
 .timeline-item::before {
     content: attr(data-step);
     position: absolute;
-    left: -45px;
-    top: 20px;
-    width: 35px;
-    height: 35px;
+    left: -2.5rem;
+    top: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     background: #ff00ff;
     color: #fff;
     border-radius: 50%;
     text-align: center;
-    line-height: 35px;
+    line-height: 2rem;
     box-shadow: 0 0 15px #ff00ff;
 }
 
 .timeline-item h3 {
     color: #00ff00;
     text-shadow: 0 0 5px #00ff00;
-    margin-bottom: 10px;
+    margin-bottom: 0.75rem;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+}
+
+.timeline-item p {
+    margin-bottom: 0.75rem;
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
 }
 
 .status {
-    padding: 5px 15px;
+    padding: 0.4rem 1rem;
     border-radius: 20px;
-    font-size: 0.9em;
+    font-size: clamp(0.8rem, 2vw, 0.9rem);
 }
 
 .completed { background: #00ff00; color: #000; }
@@ -290,17 +314,23 @@ input:focus {
     transform: translateX(0);
 }
 
-/* Responsive */
+/* Responsive Design */
 @media (max-width: 768px) {
-    .holo-container { padding: 20px; }
-    .nav-btn { padding: 8px 15px; margin: 5px; }
+    .holo-header { padding: 1rem; }
+    .nav-container { flex-direction: column; gap: 0.5rem; }
+    .holo-container { padding: 1.5rem; }
+    .hero { padding: 2rem 0; }
     .card-grid { grid-template-columns: 1fr; }
-    .inspire-tool { flex-direction: column; align-items: center; }
-    input { width: 80%; }
+    .timeline { padding-left: 2.5rem; }
+    .timeline-item::before { left: -2rem; width: 1.5rem; height: 1.5rem; line-height: 1.5rem; }
 }
 
 @media (max-width: 480px) {
-    h1 { font-size: 2em; }
-    .section-title { font-size: 1.5em; }
-    .hero h2 { font-size: 1.8em; }
+    h1 { font-size: 1.8rem; }
+    .subtitle { font-size: 0.9rem; }
+    .section-title { font-size: 1.5rem; }
+    .hero h2 { font-size: 1.5rem; }
+    .cta-btn, .neon-btn { padding: 0.6rem 1.2rem; }
+    .inspire-tool { gap: 0.75rem; }
+    input { width: 90%; }
 }
