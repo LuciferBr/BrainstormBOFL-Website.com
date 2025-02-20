@@ -10,7 +10,7 @@ body {
     color: #fff;
     line-height: 1.6;
     overflow-x: hidden;
-    font-size: 16px; /* Base font size for scaling */
+    font-size: 16px;
 }
 
 /* Header */
@@ -27,7 +27,7 @@ body {
 h1 {
     color: #00ffff;
     text-shadow: 0 0 15px #00ffff;
-    font-size: clamp(1.8rem, 5vw, 2.5rem); /* Scales with viewport */
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
     animation: glow 2s infinite alternate;
 }
 
@@ -68,6 +68,9 @@ h1 {
     max-width: 1200px;
     margin: 0 auto;
     padding: clamp(1.5rem, 4vw, 2.5rem);
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
 }
 
 .section-title {
@@ -115,20 +118,45 @@ h1 {
 }
 
 /* About Page */
+.about-section {
+    text-align: center;
+}
+
 .about-section p {
     font-size: clamp(1rem, 3vw, 1.1rem);
-    text-align: center;
     margin: 1rem auto;
     max-width: 800px;
+    padding: 0 1rem;
 }
 
 /* Inspire Page */
+.inspire-section {
+    text-align: center;
+}
+
+.intro-text {
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    margin-bottom: 1.5rem;
+    color: #ffccff;
+    text-shadow: 0 0 5px #ffccff;
+}
+
 .inspire-tool {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     margin-bottom: 2rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 input {
@@ -323,6 +351,8 @@ input:focus {
     .card-grid { grid-template-columns: 1fr; }
     .timeline { padding-left: 2.5rem; }
     .timeline-item::before { left: -2rem; width: 1.5rem; height: 1.5rem; line-height: 1.5rem; }
+    .inspire-tool { max-width: 100%; }
+    .button-group { flex-direction: row; gap: 0.5rem; }
 }
 
 @media (max-width: 480px) {
@@ -332,5 +362,7 @@ input:focus {
     .hero h2 { font-size: 1.5rem; }
     .cta-btn, .neon-btn { padding: 0.6rem 1.2rem; }
     .inspire-tool { gap: 0.75rem; }
-    input { width: 90%; }
+    input { width: 100%; max-width: 100%; }
+    .button-group { flex-direction: column; width: 100%; }
+    .neon-btn { width: 100%; max-width: 200px; }
 }
