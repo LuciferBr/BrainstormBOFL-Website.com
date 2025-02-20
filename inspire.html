@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainstorm - Inspire Global Change</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="holo-header">
+        <h1>Brainstorm</h1>
+        <p class="subtitle">Where Creativity Shapes the Future</p>
+        <nav>
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="about.html" class="nav-btn">About</a>
+            <a href="inspire.html" class="nav-btn active">Inspire Global Change</a>
+            <a href="plans.html" class="nav-btn">Plans & Progress</a>
+        </nav>
+    </header>
+
+    <main class="holo-container">
+        <section class="inspire-section">
+            <h2 class="section-title">Inspire Global Change</h2>
+            <div class="inspire-tool">
+                <input type="text" id="ideaInput" placeholder="Enter your idea...">
+                <button class="neon-btn" onclick="addIdea()">Add Idea</button>
+                <button class="neon-btn inspire-btn" onclick="inspireChange()">Inspire Now</button>
+            </div>
+            <ul id="ideaList" class="holo-list"></ul>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
