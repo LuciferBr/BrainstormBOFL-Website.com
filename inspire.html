@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brainstorm - Inspire Global Change</title>
+    <title>Name Brainstorm 2050 - Inspire Global Change</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header class="holo-header">
-        <h1>Brainstorm</h1>
+        <h1>Name Brainstorm 2050</h1>
         <p class="subtitle">Where Creativity Shapes the Future</p>
-        <nav>
+        <nav class="nav-container">
             <a href="index.html" class="nav-btn">Home</a>
             <a href="about.html" class="nav-btn">About</a>
             <a href="inspire.html" class="nav-btn active">Inspire Global Change</a>
@@ -22,10 +22,13 @@
     <main class="holo-container">
         <section class="inspire-section">
             <h2 class="section-title">Inspire Global Change</h2>
+            <p class="intro-text">Type an idea and watch it transform into a world-changing concept.</p>
             <div class="inspire-tool">
                 <input type="text" id="ideaInput" placeholder="Enter your idea...">
-                <button class="neon-btn" onclick="addIdea()">Add Idea</button>
-                <button class="neon-btn inspire-btn" onclick="inspireChange()">Inspire Now</button>
+                <div class="button-group">
+                    <button class="neon-btn" onclick="addIdea()">Add Idea</button>
+                    <button class="neon-btn inspire-btn" onclick="inspireChange()">Inspire Now</button>
+                </div>
             </div>
             <ul id="ideaList" class="holo-list"></ul>
         </section>
