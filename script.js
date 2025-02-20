@@ -1,4 +1,3 @@
-// Inspire Global Change Functionality
 let lastIdea = "";
 function addIdea() {
     let ideaText = document.getElementById("ideaInput")?.value;
@@ -33,7 +32,6 @@ function inspireChange() {
     });
 }
 
-// Plans Page Timeline Animation
 document.addEventListener("DOMContentLoaded", () => {
     const timelineItems = document.querySelectorAll(".timeline-item");
     if (timelineItems.length) {
